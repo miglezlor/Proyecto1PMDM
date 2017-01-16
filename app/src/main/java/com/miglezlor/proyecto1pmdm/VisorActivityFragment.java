@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -16,5 +14,37 @@ import static android.app.Activity.RESULT_OK;
  */
 public class VisorActivityFragment extends Fragment {
 
+    private Button bvolver;
 
+
+    public VisorActivityFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+
+
+        View view = inflater.inflate(R.layout.fragment_visor, container, false);
+
+
+        bvolver = (Button)view.findViewById(R.id.visor_volver);
+
+
+        bvolver.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View view){
+
+                Intent volver = new Intent();
+                volver.putExtra("aVisor","");
+
+                getActivity().setResult(RESULT_OK, volver);
+                getActivity().finish();
+            }
+        });
+        return view;
+    }
 }

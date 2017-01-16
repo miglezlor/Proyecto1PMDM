@@ -69,7 +69,6 @@ public class MainActivityFragment extends Fragment {
         if (requestCode == CODIGO) {
             if (resultCode == RESULT_OK) {
                 String result = data.getStringExtra("aVisor");
-                text.setText(result);
             }
         }
     }
